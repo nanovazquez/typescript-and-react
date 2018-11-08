@@ -1,8 +1,23 @@
 import React from "react";
 import styles from "./styles.module.css";
+import { IProps } from "./types";
 
-export default class TopBar extends React.PureComponent {
+export default class TopBar extends React.PureComponent<IProps> {
+  static defaultProps = {
+    productName: "Anypoint Platform"
+  };
+
   render() {
-    return <div className={styles.topbar}>Topbar</div>;
+    const { productName, user } = this.props;
+    return (
+      <div className={styles.topBar}>
+        <div className={styles.hamburger} />
+        <div className={styles.product}>{productName}</div>
+        <div className={styles.settings}>
+          <span className={styles.help}>?</span>
+          {user && <span className={styles.userInitials}>{user.initials}</span>}
+        </div>
+      </div>
+    );
   }
 }

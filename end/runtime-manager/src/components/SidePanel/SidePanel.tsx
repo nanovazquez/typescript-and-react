@@ -1,8 +1,24 @@
 import React from "react";
+import { IProps } from "./types";
 import styles from "./styles.module.css";
 
-export default class SidePanel extends React.PureComponent {
+export default class SidePane extends React.PureComponent<IProps> {
+  static defaultProps = {
+    pages: [],
+    activePage: undefined
+  };
+
   render() {
-    return <div className={styles.sidePanel}>SidePanel</div>;
+    const { pages, activePage } = this.props;
+
+    return (
+      <div className={styles.sidePanel}>
+        {pages.map(page => (
+          <a href={page.url} className={activePage.url === page.url ? styles.activeLink : styles.link}>
+            {page.title}
+          </a>
+        ))}
+      </div>
+    );
   }
 }

@@ -1,6 +1,7 @@
 .applicationsPage {
   display: flex;
   padding: 20px;
+  height: calc(100% - 150px);
 }
 
 .table {

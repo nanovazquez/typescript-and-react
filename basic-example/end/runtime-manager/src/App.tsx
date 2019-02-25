@@ -11,8 +11,8 @@ class App extends Component {
   render() {
     return (
       <div className={styles.app}>
-        <TopBar user={user} productName={productName} />
-        <SidePanel pages={pages} activePage={activePage} />
+        <TopBar productName={productName} user={user}  />
+        <SidePanel activePage={activePage} pages={pages} />
         <ApplicationsPage />
       </div>
     );

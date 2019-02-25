@@ -9,6 +9,8 @@ export default class TopBar extends React.PureComponent<IProps> {
 
   render() {
     const { productName, user } = this.props;
+    this.props.user
+    
     return (
       <div className={styles.topBar}>
         <div className={styles.hamburger} />

@@ -1,11 +1,9 @@
 import React from "react";
-import { IProps, IState } from "./types";
-import styles from "./styles.module.css";
-
-import applicationsService from "../../services/applicationsService";
-
 import ReactTable from "react-table";
+import applicationsService from "../../services/applicationsService";
+import { IProps, IState } from "./types";
 import "react-table/react-table.css";
+import styles from "./styles.module.css";
 
 export default class ApplicationsPage extends React.PureComponent<IProps, IState> {
   state = {
